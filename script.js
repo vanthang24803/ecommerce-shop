@@ -38,12 +38,22 @@ const submenu = document.querySelectorAll(".has-child .icon-small");
 submenu.forEach((menu) => menu.addEventListener("click", toggle));
 
 function toggle(e) {
-	e.preventDefault();
-	submenu.forEach((item) =>
-		item != this
-			? item.closest(".has-child").classList.remove("expand")
-			: null
-	);
-	if (this.closest(".has-child").classList != "expand");
-	this.closest(".has-child").classList.toggle("expand");
+    e.preventDefault();
+    submenu.forEach((item) =>
+        item != this
+            ? item.closest(".has-child").classList.remove("expand")
+            : null
+    );
+    if (this.closest(".has-child").classList != "expand");
+    this.closest(".has-child").classList.toggle("expand");
 }
+
+// SLIDER
+
+const swiper = new Swiper(".swiper", {
+	loop: true,
+
+	pagination: {
+		el: ".swiper-pagination",
+	},
+});

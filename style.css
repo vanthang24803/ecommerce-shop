@@ -562,7 +562,7 @@ form.search button:hover {
 	border-radius: 7px 7px 0 0;
 }
 
-.off-canvas .has-child > :where(ul, .mega) {
+.off-canvas .has-child> :where(ul, .mega) {
 	font-size: var(--font-small);
 	font-weight: var(--fw3);
 	line-height: 28px;
@@ -574,12 +574,12 @@ form.search button:hover {
 	transition: max-height 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.off-canvas .expand > :where(ul, .mega) {
+.off-canvas .expand> :where(ul, .mega) {
 	max-height: 2000px;
 }
 
 .off-canvas .thetop-nav ul,
-.off-canvas nav > ul {
+.off-canvas nav>ul {
 	flex-direction: column;
 	align-items: flex-start;
 	font-size: var(--font-small);
@@ -610,12 +610,7 @@ form.search button:hover {
 	width: var(--percent100);
 }
 
-.off-canvas
-	.thetop-nav
-	.right
-	> ul
-	> :where(:nth-child(4), li:nth-child(5))
-	> a {
+.off-canvas .thetop-nav .right>ul> :where(:nth-child(4), li:nth-child(5))>a {
 	display: none;
 }
 
@@ -630,6 +625,65 @@ form.search button:hover {
 	line-height: 16px;
 	margin: 0 0.5em 0.5em 0;
 }
+
+/* SLIDER */
+
+.slider>div>.wrapper {
+	width: calc(100% - (300px + 2em));
+	margin-left: auto;
+}
+
+.slider .item {
+	position: relative;
+	height: 474px;
+}
+
+.slider .item::before {
+	content: "";
+	position: absolute;
+	top: 30%;
+	left: 0;
+	width: 450px;
+	height: 300px;
+	background-color: var(--white-color);
+	z-index: 1;
+	filter: blur(50px);
+	opacity: 0.8;
+}
+
+.slider .text-content {
+	position: relative;
+	height: var(--percent100);
+	justify-content: flex-end;
+	padding: 0 0 10% 10%;
+	z-index: 1;
+}
+
+.slider h4 {
+	font-size: var(--font-small);
+	font-weight: var(--fw7);
+	width: fit-content;
+	padding: 4px 10px;
+	background-color: var(--dark-color);
+	color: var(--white-color);
+	border-radius: 4px;
+}
+
+.text-content :where(h2, h3) span:first-child {
+	font-weight: var(--fw3);
+	color: var(--light-text-color);
+}
+
+.text-content :where(h2, h3) span:last-child {
+	color: var(--secondary-dark-color);
+	text-transform: uppercase;
+	letter-spacing: -1px;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+	background-color: var(--secondary-dark-color);
+}
+
 
 /* RESPONSIVE */
 
