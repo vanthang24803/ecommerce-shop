@@ -628,11 +628,6 @@ form.search button:hover {
 
 /* SLIDER */
 
-.slider>div>.wrapper {
-	width: calc(100% - (300px + 2em));
-	margin-left: auto;
-}
-
 .slider .item {
 	position: relative;
 	height: 474px;
@@ -684,6 +679,22 @@ form.search button:hover {
 	background-color: var(--secondary-dark-color);
 }
 
+/* BRANDS */
+
+.brands .wrapper {
+	justify-content: space-around;
+	flex-wrap: wrap;
+	padding: 2em 0;
+}
+
+.brands .item img {
+	opacity: 0.75;
+	transition: opacity 0.3s;
+}
+
+.brands .item a:hover img {
+	opacity: 1;
+}
 
 /* RESPONSIVE */
 
@@ -884,6 +895,13 @@ form.search button:hover {
 
 	.dpt-menu .has-child:hover .mega {
 		display: flex;
+	}
+
+	/* SLIDER */
+
+	.slider>div>.wrapper {
+		width: calc(100% - (300px + 2em));
+		margin-left: auto;
 	}
 
 }
