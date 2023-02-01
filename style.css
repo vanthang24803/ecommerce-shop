@@ -956,7 +956,7 @@ form.search button:hover {
 .products.main .item {
 	flex-direction: column;
 	flex: 0 0 100%;
-	padding: 0 0 0.935em;
+	padding: 0 0.938em;
 	padding-bottom: 2em;
 }
 
@@ -964,9 +964,124 @@ form.search button:hover {
 	height: 390px;
 }
 
+.products.main .footer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: 0 1em 1em;
+	border-radius: 7px;
+	z-index: 1;
+	background: linear-gradient(
+		0deg,
+		var(--light-bg-color) 0%,
+		var(--white-color) 70%
+	);
+	opacity: 0;
+	visibility: hidden;
+	will-change: opacity;
+	transition: all 0.2s ease-in-out;
+}
+
+.products.main .item:hover .footer {
+	opacity: 1;
+	visibility: visible;
+}
+
+.products.main .footer ul {
+	list-style: disc;
+	padding: 1.25em 0 0 1.25em;
+	line-height: 1.8;
+	border-top: 1px solid var(--border-color);
+	margin-top: 145px;
+}
+
+.products.main .item:hover .content > *:not(.footer) {
+	z-index: 3;
+}
+
+/* BANNNER */
+
+.banners .item {
+	position: relative;
+	background-color: var(--white-color);
+	border: 1px solid var(--border-color);
+}
+
+.banner .image {
+	text-align: right;
+}
+
+
+.banner .get-gray {
+	background-color: var(--border-color);
+}
+
+.banner :where(.text-content, .over-link) {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: var(--percent100);
+	height: var(--percent100);
+}
+
+.banner .text-content {
+	padding: 1.5em 2.5em;
+}
+
+.banner h3 {
+	font-size: calc(1em + 0.5vw);
+	font-weight: var(--fw3);
+}
+
+.banner h3 span {
+	font-size: 80%;
+}
+
+.banner .primary-button {
+	z-index: 3;
+}
+
+.banners .product-categories .item {
+	display: flex;
+	padding: 1.5em;
+}
+
+.banners .product-categories .image {
+	max-width: 150px;
+}
+
+.mini-links ul {
+	font-size: var(--font-small);
+	color: var(--light-text-color);
+	margin-top: 1em;
+}
+
+.banners .second-links {
+	margin-top: 2em;
+}
+
+.mini-links li a:hover {
+	text-decoration: underline;
+}
 
 
 /* RESPONSIVE */
+
+/* MOBILE */
+@media screen and (min-width: 481px) {
+	.products.main .item {
+		flex: 0 0 50%;
+	}
+
+
+}
+
+
+/* TABLE */
+
+
+@media screen and (max-width: 639px) {}
+
 
 @media screen and (min-width: 768px) {
 	.products .price .current {
@@ -989,8 +1104,20 @@ form.search button:hover {
 		width: 50%;
 	}
 
+	.products.one .is_sticky,
+	.is_sticky {
+		position: sticky;
+		top: 2em;
+	}
+
+	.checkout .item.right {
+		padding: 5em 0 0 5em;
+	}
 }
 
+
+
+/* PC */
 
 @media screen and (min-width: 992px) {
 	.container {
@@ -1213,4 +1340,8 @@ form.search button:hover {
 	.widgets .row {
 		flex: 0 0 25%;
 	}
+
+	/* FOOTER */
+
+	
 }
