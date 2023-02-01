@@ -971,11 +971,9 @@ form.search button:hover {
 	padding: 0 1em 1em;
 	border-radius: 7px;
 	z-index: 1;
-	background: linear-gradient(
-		0deg,
-		var(--light-bg-color) 0%,
-		var(--white-color) 70%
-	);
+	background: linear-gradient(0deg,
+			var(--light-bg-color) 0%,
+			var(--white-color) 70%);
 	opacity: 0;
 	visibility: hidden;
 	will-change: opacity;
@@ -995,7 +993,7 @@ form.search button:hover {
 	margin-top: 145px;
 }
 
-.products.main .item:hover .content > *:not(.footer) {
+.products.main .item:hover .content>*:not(.footer) {
 	z-index: 3;
 }
 
@@ -1067,6 +1065,30 @@ form.search button:hover {
 
 /* FOOTER */
 
+.newsletter {
+	padding: 2.5em 0;
+	background-color: var(--dark-color);
+	color: var(--white-color);
+}
+
+.newsletter h3 {
+	font-size: 1.5em;
+}
+
+.newsletter p {
+	font-weight: var(--fw3);
+	color: var(--border-color);
+	margin: 0.5em 0 1.5em;
+}
+
+.newsletter p strong {
+	color: var(--primary-color);
+}
+
+.newsletter form {
+	max-width: 500px;
+	width: var(--percent100);
+}
 
 /* RESPONSIVE */
 
@@ -1346,5 +1368,9 @@ form.search button:hover {
 
 	/* FOOTER */
 
-	
+	.newsletter .box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 }
