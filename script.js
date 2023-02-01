@@ -51,9 +51,21 @@ function toggle(e) {
 // SLIDER
 
 const swiper = new Swiper(".swiper", {
-	loop: true,
+    loop: true,
 
-	pagination: {
-		el: ".swiper-pagination",
-	},
+    pagination: {
+        el: ".swiper-pagination",
+    },
+});
+
+// SHOW SEARCH
+
+const searchButton = document.querySelector(".t-search"),
+    tClose = document.querySelector(".search-close"),
+    showClass = document.querySelector(".site");
+searchButton.addEventListener("click", function () {
+    showClass.classList.toggle("showsearch");
+});
+tClose.addEventListener("click", function () {
+    showClass.classList.remove("showsearch");
 });

@@ -1011,13 +1011,12 @@ form.search button:hover {
 	text-align: right;
 }
 
-
 .banner .get-gray {
 	background-color: var(--border-color);
 }
 
 .banner :where(.text-content, .over-link) {
-	position: relative;
+	position: absolute;
 	top: 0;
 	left: 0;
 	width: var(--percent100);
@@ -1063,6 +1062,10 @@ form.search button:hover {
 .mini-links li a:hover {
 	text-decoration: underline;
 }
+
+
+
+/* FOOTER */
 
 
 /* RESPONSIVE */
