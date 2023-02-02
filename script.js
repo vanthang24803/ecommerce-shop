@@ -61,11 +61,11 @@ const swiper = new Swiper(".swiper", {
 // SHOW SEARCH
 
 const searchButton = document.querySelector(".t-search"),
-    tClose = document.querySelector(".search-close"),
-    showClass = document.querySelector(".site");
+	tClose = document.querySelector(".search-close"),
+	showClass = document.querySelector(".site");
 searchButton.addEventListener("click", function () {
-    showClass.classList.toggle("showsearch");
+	showClass.classList.toggle("showsearch");
 });
 tClose.addEventListener("click", function () {
-    showClass.classList.remove("showsearch");
+	showClass.classList.remove("showsearch");
 });
