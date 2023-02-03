@@ -1372,7 +1372,7 @@ form.search button:hover {
 /* 
   d.Product description */
 
-  .products.one .available {
+.products.one .available {
 	font-size: var(--font-small);
 	font-weight: var(--fw5);
 	padding: 0.5em;
@@ -1441,7 +1441,7 @@ form.search button:hover {
 	background-color: #1dd1a1;
 }
 
-.single-product .variant form p input:checked + label {
+.single-product .variant form p input:checked+label {
 	background-color: transparent;
 	border: 2px solid var(--dark-color);
 	color: var(--white-color);
@@ -1463,7 +1463,7 @@ form.search button:hover {
 	justify-content: center;
 }
 
-.single-product .sizes .variant form p input:checked + label::before {
+.single-product .sizes .variant form p input:checked+label::before {
 	background-color: var(--dark-color);
 	opacity: 1;
 }
@@ -1516,21 +1516,233 @@ form.search button:hover {
 }
 
 
-/* 08. Page single
- * e. Product Review
- *--------------------- */
+/*  e. Product Review */
+
+
+.products .collapse .has-child>a {
+	position: relative;
+	font-weight: var(--fw7);
+	text-transform: uppercase;
+	padding: 1em 1.25em;
+	border-top: 1px solid var(--border-color);
+	gap: 1em;
+	align-items: flex-start;
+}
+
+.products .collapse .has-child>a::before {
+	content: "+";
+	position: absolute;
+	left: 0;
+}
+
+.products .collapse .content {
+	margin: 0 0 1.5em 2em;
+	font-size: var(--font-small);
+}
+
+.products .collapse .content li span:first-child {
+	min-width: 100px;
+	display: inline-flex;
+	font-weight: var(--fw7);
+	text-transform: uppercase;
+}
+
+.products .collapse table {
+	line-height: 3em;
+}
+
+.products .collapse table thead th {
+	vertical-align: bottom;
+	border-bottom: 2px solid var(--dark-color);
+}
+
+.products .collapse table :where(th, td) {
+	border-bottom: 1px solid var(--border-color);
+	padding-left: 2em;
+}
+
+.products .collapse .content {
+	display: none;
+}
+
+.products .collapse .expand .content {
+	display: flex;
+}
+
+.products .collapse .expand>a::before {
+	content: "-";
+}
+
+
+/* e. Product Review */
+
+.products .reviews h4 {
+	font-size: 2em;
+	color: var(--light-text-color);
+	padding-top: 1em;
+	margin: 1em 0 0.5em;
+	border-top: 1px solid var(--border-color);
+}
+
+.products .review-block {
+	color: initial;
+}
+
+.products .review-block-head>a {
+	display: block;
+	font-size: 1.25em;
+	width: var(--percent100);
+	margin-top: 1em;
+	text-align: center;
+}
+
+.products .review-block-head .rate-sum {
+	position: relative;
+	font-size: 4em;
+	font-weight: var(--fw7);
+	padding-right: 0.5em;
+}
+
+.products .review-block-head .rate-sum::before {
+	content: "";
+	width: 2px;
+	height: 50px;
+	display: block;
+	position: absolute;
+	top: 10px;
+	right: 13px;
+	transform: rotate(22deg);
+	background-color: var(--light-bg-color);
+}
+
+.products .review-block-body .item {
+	gap: 1em;
+	padding-bottom: 2.5em;
+	margin-top: 3.5em;
+}
+
+.products .review-block-body :where(.person, .review-title) {
+	font-weight: var(--fw7);
+	text-transform: uppercase;
+}
+
+.products .review-block-body :where(.review-title, .view-all) {
+	font-size: 1.25em;
+	justify-content: end;
+}
+
+.products .review-block-body .item:not(:last-child) {
+	border-bottom: 1px solid var(--border-color);
+}
 
 
 
-/* 08. Page single
- * e. Product Review
- *--------------------- */
 
 /* 08. Page single
  * f. Product Review Form
  *--------------------- */
+.review-form .rating {
+	flex-wrap: wrap;
+}
+
+.review-form p {
+	font-size: 1.25em;
+	margin-right: 1em;
+}
+
+.review-form .rate-this input {
+	display: none;
+}
+
+.review-form .rate-this label {
+	float: right;
+	font-size: 2em;
+	color: var(--secondary-dark-color);
+}
+
+.rate-this>input:checked~label,
+.rate-this:not(:checked)>label:hover,
+.rate-this:not(:checked)>label:hover~label {
+	color: #f1c40e;
+}
+
+.rate-this>input:checked+label:hover,
+.rate-this>input:checked~label:hover,
+.rate-this>label:hover~input:checked~label,
+.rate-this>input:checked~label:hover~label {
+	color: #ffed85;
+}
 
 
+.review-form form {
+	margin-top: 2.5em;
+}
+
+form p {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2em;
+}
+
+form :where(input, textarea) {
+	line-height: 1;
+	padding: 1em;
+	border: 1px solid var(--border-color);
+	outline: 0;
+}
+
+form label {
+	font-weight: var(--fw5);
+	margin-bottom: 0.5em;
+	text-transform: uppercase;
+}
+
+/* ----------------------
+ * -----09. Page single: special offer------
+ *--------------------- */
+
+.page-single .stock {
+	margin: 2em 0;
+}
+
+.page-single .stock .qty span:last-child {
+	color: initial;
+}
+
+.single-product .stock .bar {
+	height: 10px;
+}
+
+.page-single .stock .bar .available {
+	margin: 0;
+	border-radius: 0;
+	background-color: var(--secondary-dark-color);
+}
+
+.related-products .content {
+	height: var(--percent100);
+}
+
+.related-products .offer {
+	margin: 0;
+}
+
+.related-products .offer p {
+	margin: 0 1em 0 0;
+	text-transform: none;
+	line-height: 1;
+}
+
+.related-products .offer ul li {
+	width: auto;
+	height: 28px;
+	font-size: var(--font-small);
+	padding: 0.5em 0.25em;
+}
+
+.related-products .content .stock {
+	margin-top: auto;
+}
 
 /* ----------------------
  * -----10. PAGE CATEGORY------

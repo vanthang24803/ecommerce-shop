@@ -531,7 +531,7 @@
                                                 <div class="actions">
                                                     <div class="qty-control flexitem">
                                                         <button class="minus circle">-</button>
-                                                        <input type="text" value="1">
+                                                        <input type="text" value="1" class="value">
                                                         <button class="plus circle">+</button>
                                                     </div>
                                                     <div class="button-cart"><button class="primary-button">Add to
@@ -1275,7 +1275,7 @@
                 </div>
             </div>
         </footer>
-        
+
         <!-- MENU BOTTOM -->
         <div class="menu-bottom desktop-hide">
             <div class="container">
@@ -1338,6 +1338,27 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.js"></script>
     <script src="./script.js"></script>
+    <script>
+        let addBtn = document.querySelector(".plus");
+        let subBtn = document.querySelector(".minus");
+        let valueElement = document.querySelector(".value");
+        let value = valueElement.value;
+        let render = (value) => {
+            valueElement.value = value;
+            if (value <= 1) {
+                valueElement.value = 1;
+            }
+        }
+        addBtn.addEventListener("click", () => {
+            value++;
+            render(value);
+        });
+        subBtn.addEventListener("click", () => {
+            value--;
+            render(value);
+        });
+
+    </script>
 </body>
 
 </html>
