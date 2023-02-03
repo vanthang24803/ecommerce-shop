@@ -61,11 +61,47 @@ const swiper = new Swiper(".swiper", {
 // SHOW SEARCH
 
 const searchButton = document.querySelector(".t-search"),
-	tClose = document.querySelector(".search-close"),
-	showClass = document.querySelector(".site");
-searchButton.addEventListener("click", function () {
-	showClass.classList.toggle("showsearch");
+    tClose = document.querySelector(".search-close"),
+    showClass = document.querySelector(".site");
+searchButton.addEventListener("click", () => {
+    showClass.classList.toggle("showsearch");
 });
-tClose.addEventListener("click", function () {
-	showClass.classList.remove("showsearch");
+tClose.addEventListener("click", () => {
+    showClass.classList.remove("showsearch");
+});
+
+// SHOW DPT MENU PAGE SINGLE
+
+const dptButton = document.querySelector(".dpt-cat .dpt-trigger"),
+    dptClass = document.querySelector(".site");
+
+dptButton.addEventListener("click", () => {
+    dptClass.classList.toggle("showdpt");
+});
+
+
+// SLIDER IMAGE
+
+let productThumb = new Swiper(".small-image", {
+	loop: true,
+	spaceBetween: 10,
+	slidesPerView: 3,
+	freeMode: true,
+	watchSlidesProgress: true,
+	breakpoints: {
+		481: {
+			spaceBetween: 32,
+		},
+	},
+});
+let productBig = new Swiper(".big-image", {
+	loop: true,
+	autoHeight: true,
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+	thumbs: {
+		swiper: productThumb,
+	},
 });
