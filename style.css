@@ -1241,9 +1241,8 @@ form.search button:hover {
 	background-color: var(--primary-color);
 }
 
-/* ----------------------
- * -----07. Overlay------ 
- *--------------------- 
+
+
 .overlay {
 	position: fixed;
 	width: var(--percent100);
@@ -1261,7 +1260,7 @@ form.search button:hover {
 	opacity: 1;
 	visibility: inherit;
 } 
-*/
+
 
 /* ----------------------
  * 08. Page Single 
