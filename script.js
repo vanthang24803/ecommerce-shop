@@ -121,4 +121,22 @@ divTrigger.addEventListener("click", () => {
     }, 250);
 });
 
+// CLOSE BY OUTSIDE
+
+document.addEventListener("click", (e) => {
+	const isClosest = e.target.closest(divtoShow);
+	if (!isClosest && divPopup.classList.contains("show")) {
+		divPopup.classList.remove("show");
+	}
+});
+
+
+// SHOW MODAL
+
+window.onload = function () {
+	document.querySelector(".site").classList.toggle("showmodal");
+};
+document.querySelector(".modalclose").addEventListener("click", function () {
+	document.querySelector(".site").classList.remove("showmodal");
+});
 
